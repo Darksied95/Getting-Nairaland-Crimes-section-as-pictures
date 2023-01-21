@@ -1,6 +1,8 @@
 const puppeteer = require('puppeteer')
+const cleaner = require('./CleanUpNews')
 
 
+cleaner()
 async function run() {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -16,12 +18,11 @@ async function run() {
 
 
     for (const each of filteredNews) {
-        const news = await page.goto(each)
-        await page.screenshot({ path: each.split('/').at(-1) + '.png', fullPage: true })
+        await page.goto(each)
+        await page.screenshot({ path: './news/' + each.split('/').at(-1) + '.png', fullPage: true })
     }
 
 
-    // await page.pdf({ path: 'example.pdf', format: 'A4' })
 
     await browser.close()
 }
