@@ -22,8 +22,10 @@ async function run() {
 
 
     for (let i = 0; i < filteredNews.length; i++) {
+
         await page.goto(filteredNews[i])
         await page.screenshot({ path: './news/' + filteredNews[i].split('/').at(-1) + '.png', fullPage: true })
+
         console.clear()
 
             (i !== filteredNews.length - 1)
