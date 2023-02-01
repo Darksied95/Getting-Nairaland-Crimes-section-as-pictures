@@ -7,7 +7,7 @@ Cleans news folder
 
 */
 cleaner()
-const section = 'crime'
+const section = 'programming'
 
 async function run() {
     const browser = await puppeteer.launch();
