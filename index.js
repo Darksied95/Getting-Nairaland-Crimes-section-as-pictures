@@ -28,7 +28,7 @@ async function run() {
 
         console.clear()
 
-            (i !== filteredNews.length - 1)
+        i !== filteredNews.length - 1
             ?
             console.log(Math.floor(i / filteredNews.length * 100) + '%')
             :
